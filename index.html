@@ -1,394 +1,566 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belmont Publishing - Exceptional Literature</title>
-    <meta name="description" content="Belmont Publishing curates exceptional literature and brings extraordinary voices to discerning readers worldwide.">
+    <title>བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག - Tibetan Language and Linguistics</title>
+    <meta name="description" content="Academic journal for Tibetan language studies - published by Nankai University and University of Oregon">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- Academic Serif Fonts: Tibetan, Chinese, English -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tibetan:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grain-overlay"></div>
-    
-    <header class="header" id="header">
-        <div class="header-inner">
-            <nav class="nav">
-                <a href="#" class="logo">
-                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M8 7h8M8 12h8M8 17h5" stroke="currentColor" stroke-width="1.5"/>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="bo">བོད་ཡིག</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <!-- ═══════════════════════════════════════════════════════════════════
+                     🎨 CUSTOMIZE LOGO/ICON HERE
+                     ═══════════════════════════════════════════════════════════════════
+                     
+                     OPTION 1: Keep current SVG icon (simple, scalable)
+                     OPTION 2: Replace with image logo:
+                     
+                     <div class="journal-logo">
+                         <img src="logo.png" alt="Journal Logo" style="width: 60px; height: 60px;">
+                     </div>
+                     
+                     OPTION 3: Use university logos side by side:
+                     
+                     <div class="journal-logo">
+                         <img src="nankai-logo.png" alt="Nankai University" style="width: 50px; height: 50px;">
+                         <img src="oregon-logo.png" alt="University of Oregon" style="width: 50px; height: 50px; margin-left: 10px;">
+                     </div>
+                     
+                     Current: Simple book/document icon (matches academic theme)
+                     ═══════════════════════════════════════════════════════════════════ -->
+                <!-- <div class="journal-logo">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" rx="2"/>
+                        <path d="M15 15 L35 15 M15 22 L35 22 M15 29 L35 29 M15 36 L28 36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <span class="logo-text">Belmont Publishing</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#catalog" class="nav-link">Catalog</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#authors" class="nav-link">Authors</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                </div> -->
+
+                <div class="journal-logo" style="font-size: 32px; font-weight: 700; color: var(--primary-color);">
+                </div>
+
+
+                <!-- ═══════════════════════════════════════════════════════════════════ -->
+                <div class="journal-title">
+                    <h1 class="title-tibetan">བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག</h1>
+                    <p class="title-chinese">藏语文研究</p>
+                    <p class="title-english">Tibetan Language and Linguistics</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link" data-translate="nav.home">Home</a>
+                <a href="#about" class="nav-link" data-translate="nav.about">About</a>
+                <a href="#call-for-papers" class="nav-link" data-translate="nav.callforpapers">Call for Papers</a>
+                <a href="#submission" class="nav-link" data-translate="nav.submission">Submission</a>
+                <a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-bg">
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        Founded in Belmont, Massachusetts
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="announcement-badge">
+                    <span class="badge-pulse"></span>
+                    <span data-translate="hero.badge">Journal Launch Announcement</span>
+                </div>
+                <h2 class="hero-headline" data-translate="hero.headline">
+                    Academic Journal for Tibetan Language Studies
+                </h2>
+                <p class="hero-subheadline" data-translate="hero.subheadline">
+                    Published by Nankai University & University of Oregon
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <strong data-translate="hero.deadline">Submission Deadline (Inaugural Issue):</strong>
+                        <span>September 1, 2025</span>
                     </div>
-                    <h1 class="hero-title">
-                        <span class="title-line">Publishing</span>
-                        <span class="title-line title-emphasis">exceptional</span>
-                        <span class="title-line">literature</span>
-                    </h1>
-                    <p class="hero-description">
-                        We discover and nurture extraordinary literary voices, creating lasting connections between authors and readers through carefully curated publications.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#catalog" class="btn btn-primary">
-                            <span>Explore Catalog</span>
-                            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <div class="meta-item">
+                        <strong data-translate="hero.announcement">Announcement Date:</strong>
+                        <span>May 5, 2025</span>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="book-stack">
-                        <div class="book book-1"></div>
-                        <div class="book book-2"></div>
-                        <div class="book book-3"></div>
-                    </div>
-                    <div class="floating-elements">
-                        <div class="floating-element element-1"></div>
-                        <div class="floating-element element-2"></div>
-                        <div class="floating-element element-3"></div>
-                    </div>
+                <div class="hero-actions">
+                    <a href="#call-for-papers" class="btn btn-primary" data-translate="hero.readcall">Read Full Call for Papers</a>
+                    <a href="#submission" class="btn btn-secondary" data-translate="hero.submit">Submit Manuscript</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="featured-stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="247">0</div>
-                        <div class="stat-label">Books Published</div>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="about.title">About the Journal</h2>
+            
+            <!-- ═══════════════════════════════════════════════════════════════════
+                 📷 INSERT IMAGES HERE (Optional)
+                 ═══════════════════════════════════════════════════════════════════
+                 
+                 Add hero image or banner for the journal:
+                 
+                 <div class="section-image">
+                     <img src="images/journal-cover.jpg" alt="Journal Cover" 
+                          style="width: 100%; max-width: 800px; margin: 0 auto 48px; display: block; border-radius: 16px;">
+                 </div>
+                 
+                 Or add institution photos:
+                 
+                 <div class="institutions-photos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
+                     <img src="images/nankai.jpg" alt="Nankai University" style="width: 100%; border-radius: 12px;">
+                     <img src="images/oregon.jpg" alt="University of Oregon" style="width: 100%; border-radius: 12px;">
+                 </div>
+                 
+                 ═══════════════════════════════════════════════════════════════════ -->
+            
+            <div class="about-content">
+                <div class="about-card">
+                    <h3 data-translate="about.scope.title">Scope</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <p>བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་ཅེས་པའི་དུས་དེབ་འདིའི་སྟེང་ལ། བོད་ཡིག་དང་། རྒྱ་ཡིག དབྱིན་ཡིག་སོགས་སྐད་རིགས་སྣ་ཚོགས་ཀྱིས་བྲིས་པའི་བོད་ཀྱི་སྐད་ཡིག་དང་འབྲེལ་བའི་རིག་གཞུང་དཔད་འབྲས་དགོད་འཆར་ཡོད།</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="89">0</div>
-                        <div class="stat-label">Authors</div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <p>《藏语文研究》杂志拟发表以藏文、汉文和英文等多种语文撰写的关于藏语文研究的学术成果，出版纸质和电子版本期刊在海内外发行。</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="34">0</div>
-                        <div class="stat-label">Literary Awards</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="156">0</div>
-                        <div class="stat-label">Countries Reached</div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <p>Tibetan Language and Linguistics publishes research on Tibetan language studies written in Tibetan, Chinese, and English, and other languages, available in both print and electronic formats.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="catalog" class="catalog-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">Recent Publications</div>
-                    <h2 class="section-title">Featured Books</h2>
-                    <p class="section-description">
-                        Our latest collection showcases diverse voices and compelling narratives that challenge, inspire, and illuminate the human experience.
-                    </p>
+                <div class="about-card">
+                    <h3 data-translate="about.topics.title">Research Topics</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <p>བོད་ཀྱི་སྐད་རིགས་སྣ་ཚོགས་དང་ཡུལ་སྐད་འདྲ་མིན་གྱི་སྐད་སྒྲ་དང་། སྒྲ་ཁམས། ཡི་གེའི་སྐད། བརྡ་སྤྲོད། ལོ་རྒྱུས། ཡིག་ཚང་སོགས་སྐད་བརྡ་རིག་པ་དང་འབྲེལ་བའི་དཔད་འབྲས་སྣ་ཚོགས།</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <p>本刊欢迎关于藏语，及藏族地区语言的语音、音系、文字、词汇、语法、方言、历史和文献等诸方面的语言学研究成果。</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <p>The journal welcomes academic papers on phonetics, phonology, orthography, lexicon, morphology, syntax, dialectology, historical linguistics, written records, and textual analysis of Tibetan and diverse languages of the Tibetan regions.</p>
+                    </div>
                 </div>
 
-                <div class="books-showcase">
-                    <article class="book-featured">
-                        <div class="book-cover-container">
-                            <div class="book-cover-main">
-                                <div class="book-spine"></div>
-                                <div class="book-front">
-                                    <div class="cover-design cover-design-1">
-                                        <div class="cover-pattern"></div>
-                                        <h3 class="cover-title">The Cartographer's Daughter</h3>
-                                        <p class="cover-author">Elena Richardson</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="about-card">
+                    <h3 data-translate="about.institutions.title">Affiliated Institutions</h3>
+                    <div class="institutions-list">
+                        <div class="institution">
+                            <h4>Nankai University</h4>
+                            <p class="lang-content" data-lang-content="bo">ནན་ཁའེ་སློབ་ཆེན་</p>
+                            <p class="lang-content" data-lang-content="zh" style="display:none;">南开大学</p>
+                            <p class="lang-content" data-lang-content="en" style="display:none;">Tianjin, China</p>
                         </div>
-                        <div class="book-details">
-                            <div class="book-meta">
-                                <span class="book-genre">Literary Fiction</span>
-                                <span class="book-year">2024</span>
-                            </div>
-                            <h3 class="book-title">The Cartographer's Daughter</h3>
-                            <p class="book-author">Elena Richardson</p>
-                            <p class="book-description">
-                                A haunting exploration of memory and place, following three generations of women as they navigate the changing landscapes of home and identity in post-war Eastern Europe.
-                            </p>
-                            <div class="book-awards">
-                                <span class="award">Finalist, National Book Award</span>
-                                <span class="award">Winner, Massachusetts Book Award</span>
-                            </div>
+                        <div class="institution">
+                            <h4>University of Oregon</h4>
+                            <p class="lang-content" data-lang-content="bo">ཨོ་རེ་གོན་སློབ་ཆེན་</p>
+                            <p class="lang-content" data-lang-content="zh" style="display:none;">俄勒冈大学</p>
+                            <p class="lang-content" data-lang-content="en" style="display:none;">Oregon, USA</p>
                         </div>
-                    </article>
+                    </div>
+                    <div class="editorial-office">
+                        <strong data-translate="about.editorial">Editorial Office:</strong>
+                        <span class="lang-content" data-lang-content="bo">ནན་ཁའེ་སློབ་ཆེན་གྱི་བོད་རྒྱ་སྐད་རིགས་ཞིབ་འཇུག་ལྟེ་གནས་</span>
+                        <span class="lang-content" data-lang-content="zh" style="display:none;">南开大学汉藏语研究中心</span>
+                        <span class="lang-content" data-lang-content="en" style="display:none;">Sino-Tibetan Languages Research Center, Nankai University</span>
+                    </div>
+                </div>
 
-                    <div class="books-grid">
-                        <article class="book-card">
-                            <div class="book-cover-small">
-                                <div class="cover-design cover-design-2">
-                                    <h4>Urban Symphonies</h4>
-                                </div>
-                            </div>
-                            <div class="book-info">
-                                <h4 class="book-title-small">Urban Symphonies</h4>
-                                <p class="book-author-small">Marcus Chen</p>
-                                <p class="book-excerpt">A collection of interconnected stories exploring the rhythm and melody of city life...</p>
-                            </div>
-                        </article>
-
-                        <article class="book-card">
-                            <div class="book-cover-small">
-                                <div class="cover-design cover-design-3">
-                                    <h4>Silent Frequencies</h4>
-                                </div>
-                            </div>
-                            <div class="book-info">
-                                <h4 class="book-title-small">Silent Frequencies</h4>
-                                <p class="book-author-small">Dr. Sarah Martinez</p>
-                                <p class="book-excerpt">An intimate memoir about communication, connection, and finding one's voice in academia...</p>
-                            </div>
-                        </article>
-
-                        <article class="book-card">
-                            <div class="book-cover-small">
-                                <div class="cover-design cover-design-4">
-                                    <h4>The Weight of Words</h4>
-                                </div>
-                            </div>
-                            <div class="book-info">
-                                <h4 class="book-title-small">The Weight of Words</h4>
-                                <p class="book-author-small">James Thompson</p>
-                                <p class="book-excerpt">A philosophical examination of language, power, and the responsibility of storytelling...</p>
-                            </div>
-                        </article>
-
-                        <article class="book-card">
-                            <div class="book-cover-small">
-                                <div class="cover-design cover-design-5">
-                                    <h4>Migrations</h4>
-                                </div>
-                            </div>
-                            <div class="book-info">
-                                <h4 class="book-title-small">Migrations</h4>
-                                <p class="book-author-small">Priya Sharma</p>
-                                <p class="book-excerpt">Stories of displacement and belonging across cultures, generations, and continents...</p>
-                            </div>
-                        </article>
+                <div class="about-card">
+                    <h3 data-translate="about.review.title">Review Process</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <ul>
+                            <li>དཔད་རྩོམ་དག་ཕན་ཚུན་ཕྱོགས་གཉིས་ལ་གསང་བའི་སྒོ་ནས་དཔད་བཤེར་</li>
+                            <li>རྩོམ་སྒྲིག་པ་དག་ནི་སྐད་བརྡ་རིག་པ་ལ་ཆེད་དུ་དོན་གཉེར་བྱེད་མཁན་</li>
+                            <li>རྩོམ་ཡིག་ལ་ཤོག་ངོས་བརྒྱ་ཡོན་གང་ཡང་སྐད་མི་དགོས་</li>
+                            <li>དཔད་རྩོམ་སྤེལ་གྲུབ་རྗེས་རྩོམ་ཡོན་གྱི་དོན་དུ་རྩོམ་པ་པོ་སྐྱེར་ལ་འདོན་ཐེངས་གང་དེའི་དེབ་ཕྱོད་སྦྱིན་སྲེས་དཔལ་འབུལ་</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <ul>
+                            <li>双向匿名审查论文</li>
+                            <li>以优秀的语言学专业学者组成编辑人员</li>
+                            <li>刊物不收取任何版面费用</li>
+                            <li>论文发表之后向作者赠送当期刊物作为稿酬</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <ul>
+                            <li>Rigorous double-blind peer-review process</li>
+                            <li>Editorial team composed of distinguished linguistics scholars</li>
+                            <li>No page charges</li>
+                            <li>Authors receive complimentary copies of the journal issue</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <div class="section-badge">Our Story</div>
-                        <h2 class="section-title">Crafting Literary Excellence</h2>
-                        <div class="about-text">
-                            <p class="lead-paragraph">
-                                Founded in the literary community of Belmont, Massachusetts, we believe that exceptional literature has the power to transform perspectives, bridge cultures, and illuminate the depths of human experience.
-                            </p>
-                            <p>
-                                Our editorial team works closely with authors to refine their craft while preserving their unique voice. We champion both emerging writers and established literary figures, creating a diverse catalog that reflects the complexity of our world.
-                            </p>
-                            <p>
-                                Every book we publish undergoes our rigorous editorial process, ensuring that each work meets our standards for literary merit, originality, and cultural significance.
-                            </p>
-                        </div>
-                        <div class="about-features">
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="1.5"/>
-                                    </svg>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>Editorial Excellence</h4>
-                                    <p>Rigorous editing process that enhances without compromising artistic vision</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke="currentColor" stroke-width="1.5"/>
-                                    </svg>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>Global Reach</h4>
-                                    <p>Connecting authors with readers across continents and cultures</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="1.5"/>
-                                    </svg>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>Author Support</h4>
-                                    <p>Comprehensive support from manuscript to market success</p>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Call for Papers Section -->
+    <section id="call-for-papers" class="call-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="cfp.title">Call for Papers</h2>
+            
+            <div class="call-content">
+                <!-- Tibetan Content -->
+                <div class="lang-content full-call" data-lang-content="bo">
+                    <div class="call-intro">
+                        <p>བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་གི་ཕྱོག་ལས་གནང་བཞིན་པའི་ཆེད་མཁས་རྣམ་པའི་སྙན་ལམ་དུ་ཞུ་དོན།</p>
+                        <p>དེ་ཡང་བོད་ཀྱི་སྐད་དང་ཡི་གེའི་སྐོར་ལ་ཕྱོག་ལས་གནང་མཁན་ཀུན་གྱིས་ཕན་ཚུན་གྲོགས་འདེགས་བྱས་པའི་བཀའ་དྲིན་ལས། སྤྱི་ལོ་༢༠༡༦ ལོར་ཐེན་ཅིན་གོང་ཁྱེར་ནན་ཁའེ་སློབ་གྲྭ་ཆེན་མོ་ནས་བོད་ཀྱི་སྐད་ཡིག་བགོ་གླེང་ཚོགས་འདུ་སྐབས་དང་པོ་ཚོགས་ཐུབ་པར་བརྟེན་ནས། ད་ལྟའི་བར་རིམ་བཞིན་སྐབས་དྲུག་སོང་ཚོགས་བྱས་ཡོད།</p>
+                        <p>དེ་ནས་སྤྱི་ལོ་༢༠༡༧ ལོའི་སྐབས་གཉིས་པའི་བགོ་གླེང་ཚོགས་འདུའི་སྟེང་དུ། ཚོགས་བཅར་ཆེད་མཁས་རྣམས་ནས་བསམ་ཞིབ་གོ་བསྡུར་ཐོག བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག (藏语文研究 / Tibetan Language and Linguistics) ཅེས་པའི་རིག་གཞུང་དུས་དེབ་གསར་འདོན་བྱ་རྒྱུ་གཏན་འཁེལ་བྱ་ལུགས། ང་ཚོས་ལོ་འགའི་རིང་ལ་གྲ་སྒྲིག་ལེགས་པར་བྱས་མཐར། ད་རེས་དུས་དེབ་འདི་གསར་འདོན་གྱི་ལས་ཀ་འགོ་ཚུགས་པས་ན། ཡུལ་ཕྱོགས་གང་སར་བཞུགས་པའི་ཆེད་མཁས་རྣམས་ནས་རིག་གཞུང་ཕྱོག་རྩོམ་རྗེ་བསྐུལ་གནང་མཛད་རོགས་ཞེས་ཞུ་རྒྱུ་ཡིན།</p>
                     </div>
-                    <div class="about-visual">
-                        <div class="visual-container">
-                            <div class="geometric-pattern">
-                                <div class="pattern-element"></div>
-                                <div class="pattern-element"></div>
-                                <div class="pattern-element"></div>
-                                <div class="pattern-element"></div>
-                            </div>
-                        </div>
+
+                    <div class="call-scope">
+                        <h3>དུས་དེབ་ཀྱི་ཁྱབ་ཁོངས།</h3>
+                        <p>བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་ཅེས་པའི་དུས་དེབ་འདིའི་སྟེང་ལ། བོད་ཡིག་དང་། རྒྱ་ཡིག དབྱིན་ཡིག་སོགས་སྐད་རིགས་སྣ་ཚོགས་ཀྱིས་བྲིས་པའི་བོད་ཀྱི་སྐད་ཡིག་དང་འབྲེལ་བའི་རིག་གཞུང་དཔད་འབྲས་དགོད་འཆར་ཡོད་ཅིང་། ཤོག་དཔར་དང་གློག་དཔར་ཟུང་འབྲེལ་གྱིས་འགྲེམ་སྤེལ་བྱ་རྒྱུས་ཡིན། ནང་དོན་གྱི་ཐད་ནས། བོད་ཀྱི་སྐད་རིགས་སྣ་ཚོགས་དང་ཡུལ་སྐད་འདྲ་མིན་གྱི་སྐད་སྒྲ་དང་། སྒྲ་ཁམས། ཡི་གེའི་སྐད། བརྡ་སྤྲོད། ལོ་རྒྱུས། ཡིག་ཚང་སོགས་སྐད་བརྡ་རིག་པ་དང་འབྲེལ་བའི་དཔད་འབྲས་སྣ་ཚོགས་དང་། བོད་ཀྱི་སྐད་ཡིག་དང་འབྲེལ་བའི་སྒྱུར་རྩོམ། དཔད་གླེང་སོགས་ཀྱང་བསྡུར་བར་དགའ་བསུ་ཞུ།</p>
+                    </div>
+
+                    <div class="call-editorial">
+                        <h3>རྩོམ་སྒྲིག་ལན་ཚོགས།</h3>
+                        <p>དུས་དེབ་འདིའི་རྩོམ་སྒྲིག་ལན་ཚོགས་ལ་འཛམ་གླིང་ཡུལ་གྲུ་གང་སར་བཞུགས་པའི་བོད་སྐད་ཡིག་སྐོར་གྱི་ཆེད་མཁས་དང་། བོད་དང་འབར་མའི་སྐད་སྡེ་དང་བོད་རྒྱ་སྐད་རིགས་སྐོར་གྱི་གནད་ཡོད་ཆེད་མཁས་ཁག་ཅིག་གདན་འདྲེན་ཞུ་རྒྱུ་ཡིན། དཔད་རྩོམ་དག་ཕན་ཚུན་ཕྱོགས་གཉིས་ལ་གསང་བའི་སྒོ་ནས་དཔད་བཤེར་བྱ་རྒྱུ་ཡིན་ལ། རྩོམ་སྒྲིག་པ་དག་ནི་སྐད་བརྡ་རིག་པ་ལ་ཆེད་དུ་དོན་གཉེར་བྱེད་མཁན་འབའ་ཞིག་ཡིན། རྩོམ་ཡིག་ལ་ཤོག་ངོས་བརྒྱ་ཡོན་གང་ཡང་སྐད་མི་དགོས་ཤིང་། དཔད་རྩོམ་སྤེལ་གྲུབ་རྗེས་རྩོམ་ཡོན་གྱི་དོན་དུ་རྩོམ་པ་པོ་སྐྱེར་ལ་འདོན་ཐེངས་གང་དེའི་དེབ་ཕྱོད་སྦྱིན་སྲེས་དཔལ་འབུལ་བར་བའོ།།</p>
+                    </div>
+
+                    <div class="call-institutions">
+                        <h3>ལས་ཁུངས།</h3>
+                        <p>དུས་དེབ་འདིའི་རྩོམ་སྒྲིག་ལས་དོན་ནི་ནན་ཁའེ་སློབ་ཆེན་དང་ཨོ་རེ་གོན་སློབ་ཆེན་གཉིས་ཀྱི་སྐད་བརྡ་རིག་པའི་ཆེད་མཁས་པ་ཁག་གཅིག་ཡིན་ཞིང་། རྩོམ་སྒྲིག་ཁང་ནི་ནན་ཁའེ་སློབ་ཆེན་གྱི་བོད་རྒྱ་སྐད་རིགས་ཞིབ་འཇུག་ལྟེ་གནས་སུ་འཛུགས་རྒྱུ་ཡིན། ནན་ཁའེ་སློབ་ཆེན་ནི་རྒྱ་ནག་གི་ནང་སྙན་གྲགས་ཅན་གྱི་གཙུག་ལག་སློབ་ཆེན་རྩེ་གྲུ་ཞིག་ཡིན་པ་མ་ཟད། བོད་རྒྱ་སྐད་རིགས་དང་། གངས་རིས་ཉུང་མི་རིགས་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་ཐད་ཀུན་གྱིས་མཐོང་ཆེན་དུ་འཛིན་པ་ཞིག་ཡིན།</p>
+                    </div>
+
+                    <div class="call-encouragement">
+                        <h3>བོད་ཡིག་གི་སྤྱོད་པ།</h3>
+                        <p>དུས་དེབ་འདིས་བོད་ཡིག་གི་ཐོག་ནས་སྐད་བརྡ་རིག་པའི་དཔད་རྩོམ་འབྲི་བ་དང་སྤྲོག་སྤེལ་བྱེད་པ་ལ་སྙན་མ་གཏོང་རྒྱུ་དང་། རྒྱ་ཡིག་གི་ཐོག་ནས་སྤེལ་ཟིན་པའི་རྩོམ་ཡིག་ཚད་ཐུབ་དག་སྙོར་ཡང་བོད་ཡིག་གི་ལམ་ནས་དུས་དེབ་འདིར་བསྡུར་བར་ཡང་དགའ་བསུ་ཞུ།</p>
+                    </div>
+
+                    <div class="call-significance">
+                        <h3>གལ་གནད།</h3>
+                        <p>ད་ལྟའི་ཆར། བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་དམིགས་སུ་བཟུང་བའི་སྐད་བརྡ་རིག་པའི་དུས་དེབ་གང་ཡང་མེད་ཕྱིར། བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་ཅེས་པའི་དུས་དེབ་འདི་གསར་དུ་འདོན་པ་ལ་དོན་སྙིང་ཤིན་ཏུ་ཆེ་བས། འཛམ་གླིང་ཡུལ་གྲུ་གང་སར་བཞུགས་པའི་ཆེད་མཁས་རྣམས་ནས་རབ་སྐྱོར་མི་དམན་པ་གནང་རོགས་ཞེས་ཞུ་རྒྱུ་དང་། དུས་དེབ་འདིའི་ཐོག་མའི་འདོན་ཐེངས་ཀྱི་རྩོམ་ཡིག་སྙོར་བའི་དུས་བཅད་ནི་སྤྱི་ལོ་༢༠༢༥ལོའི་ཟླ་༩པའི་ཚེས་༡ཉིན་ཡིན། སྙོ་ཉིད་ནས་དུས་ལུར་ཕྱོག་རྩོམ་རྗེ་བསྐུལ་བའི་རེ་འདུན་ཤིན་ཏུ་ཆེ།</p>
+                    </div>
+                </div>
+
+                <!-- Chinese Content -->
+                <div class="lang-content full-call" data-lang-content="zh" style="display:none;">
+                    <div class="call-intro">
+                        <h3>尊敬的从事藏语文研究的各位专家：</h3>
+                        <p>经藏语学界同仁的共同努力，2016年在天津南开大学召开了首届藏语语言学研讨会，并成功连续举办迄今已历六届。2017年，在第二届藏语会议上，与会专家又共同倡议筹办《藏语文研究 / Tibetan Language and Linguistics》学术期刊。经过几年的准备，目前条件已趋成熟，我们拟着手刊物创刊事宜，现正式面向海内外专家约稿。</p>
+                    </div>
+
+                    <div class="call-scope">
+                        <h3>刊物范围</h3>
+                        <p>《藏语文研究》杂志拟发表以藏文、汉文和英文等多种语文撰写的关于藏语文研究的学术成果，出版纸质和电子版本期刊在海内外发行。本刊欢迎关于藏语，及藏族地区语言的语音、音系、文字、词汇、语法、方言、历史和文献等诸方面的语言学研究成果，也欢迎相关藏语文研究成果的翻译、评论文章。</p>
+                    </div>
+
+                    <div class="call-editorial">
+                        <h3>编委会</h3>
+                        <p>本刊拟聘请海内外从事藏语文研究的重要专家，以及其他从事藏缅语、汉藏语研究等领域的的语言学专家为编委，双向匿名审查论文；以优秀的语言学专业学者组成编辑人员。刊物不收取任何版面费用，论文发表之后向作者赠送当期刊物作为稿酬。</p>
+                    </div>
+
+                    <div class="call-institutions">
+                        <h3>主办单位</h3>
+                        <p>本刊将由南开大学和俄勒冈大学的语言研究专家共同编辑，编辑部拟设在南开大学汉藏语研究中心。南开大学不仅是中国声名卓著的一流大学，其汉藏语暨民族语研究在海内外也拥有重要影响。自上世纪30年代的西南联大时期开始，南开大学在中国综合大学中拥有最为悠久的民族语研究历史，其少数民族语言学方向也属中国首批博士点专业。南开大学培养了包括傣、彝、藏、土家、拉祜、黎、景颇、瑶等多个民族的首位语言学博士。</p>
+                    </div>
+
+                    <div class="call-encouragement">
+                        <h3>鼓励藏文撰稿</h3>
+                        <p>本刊尤为鼓励用藏语文撰写和发表语言学论文。已经公开发表的汉语撰写的高质量学术论文，仍然欢迎将论文的藏文版本投稿给本刊（根据中华人民共和国著作权法第二十二条第十一款，已经发表的以汉语言文字创作的作品翻译成少数民族语言出版发行，无须著作权所有者许可），经过专家审稿通过，也可以作为原作者的藏文版文章或翻译文章形式发表。</p>
+                    </div>
+
+                    <div class="call-significance">
+                        <h3>重要意义</h3>
+                        <p>目前，海内外尚没有关于藏语文研究的专门的语言学刊物，筹办《藏语文研究/Tibetan Language and Linguistics》意义重大，衷心期待海内外专家大力支持。创刊号文章的投稿截止时间为2025年9月1日，热诚欢迎赐稿。</p>
+                    </div>
+                </div>
+
+                <!-- English Content -->
+                <div class="lang-content full-call" data-lang-content="en" style="display:none;">
+                    <div class="call-intro">
+                        <h3>Dear scholars engaged in the study of Tibetan languages:</h3>
+                        <p>Through the joint efforts of colleagues in the field of Tibetan language studies, the inaugural Tibetan Language and Linguistics Forum (TLLF) was held at Nankai University, Tianjin, in 2016. Since then, the forum has been successfully convened for six consecutive sessions. In 2017, during the second TLLF, participating experts resolved to establish a new academic journal titled Tibetan Language and Linguistics. After several years of preparation, we are pleased to announce the launch of this journal.</p>
+                        <p>We warmly invite scholars from around the world to contribute manuscripts.</p>
+                    </div>
+
+                    <div class="call-scope">
+                        <h3>Scope</h3>
+                        <p>Tibetan Language and Linguistics publishes research on Tibetan language studies written in Tibetan, Chinese, and English, and other languages, available in both print and electronic formats. The journal welcomes academic papers on a wide range of topics, including phonetics, phonology, orthography, lexicon, morphology, syntax, dialectology, historical linguistics, written records, and textual analysis of Tibetan and diverse languages of the Tibetan regions. We also accept translations of previously published works, as well as book reviews related to Tibetan language studies.</p>
+                    </div>
+
+                    <div class="call-editorial">
+                        <h3>Editorial Board</h3>
+                        <p>Our editorial board will include distinguished scholars from around the world specializing in Tibetan, Tibeto-Burman, and Sino-Tibetan linguistics. Submissions will undergo a rigorous double-blind peer-review process. There are no page charges, and authors will receive complimentary copies of the journal issue in which their work appears.</p>
+                    </div>
+
+                    <div class="call-institutions">
+                        <h3>Affiliated Institutions</h3>
+                        <p>The journal is co-edited by linguists from Nankai University and the University of Oregon. The editorial office is based at the Sino-Tibetan Languages Research Center at Nankai University. Nankai is a leading institution in Sino-Tibetan and ethnic minority language research, with a long-standing tradition dating back to the era of the National Southwest Associated University in the 1930s. It was among the first universities in China to establish a doctoral program in minority linguistics and has trained the first Ph.D. holders in linguistics from various ethnic groups, including the Dai, Yi, Tibetan, Tujia, Lahu, Li, Jingpo, and Yao.</p>
+                    </div>
+
+                    <div class="call-encouragement">
+                        <h3>Encouragement of Tibetan-Language Submissions</h3>
+                        <p>This journal especially encourages the writing and publication of linguistic research in Tibetan. High-quality academic papers originally published in Chinese or other languages are also welcome as Tibetan translations. (According to Article 22, Section 11 of the Copyright Law of the People's Republic of China, works published in China and written in Chinese may be translated into minority languages and published and distributed without permission from the copyright holder.) Articles that pass peer review may be published as Tibetan-language versions of the original or as translations.</p>
+                    </div>
+
+                    <div class="call-significance">
+                        <h3>Significance</h3>
+                        <p>Currently, there is no linguistic journal devoted specifically to the Tibetan language. The launch of Tibetan Language and Linguistics marks a significant step forward. We sincerely welcome your support and contributions. Submissions for the inaugural issue are due by September 1, 2025.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="newsletter-section">
-            <div class="container">
-                <div class="newsletter-container">
-                    <div class="newsletter-content">
-                        <div class="newsletter-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <h2 class="newsletter-title">Stay Connected</h2>
-                        <p class="newsletter-description">
-                            Join our literary community for exclusive previews, author interviews, and updates on new releases.
-                        </p>
+    <!-- Submission Guidelines Section -->
+    <section id="submission" class="submission-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="submission.title">Submission Guidelines</h2>
+            
+            <div class="submission-content">
+                <div class="submission-card highlight">
+                    <h3 data-translate="submission.email.title">Submission Email</h3>
+                    <div class="email-display">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M2 7l10 7 10-7"/>
+                        </svg>
+                        <a href="mailto:Thibetan@126.com">Thibetan@126.com</a>
                     </div>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                            <button type="submit" class="newsletter-submit">
-                                <span class="submit-text">Subscribe</span>
-                                <span class="submit-loading">
-                                    <svg class="loading-spinner" viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="32" stroke-dashoffset="32">
-                                            <animate attributeName="stroke-dasharray" dur="2s" values="0 64;32 32;0 64" repeatCount="indefinite"/>
-                                            <animate attributeName="stroke-dashoffset" dur="2s" values="0;-32;-64" repeatCount="indefinite"/>
-                                        </circle>
-                                    </svg>
-                                </span>
-                            </button>
+                    <p class="note lang-content" data-lang-content="bo">གསར་འགོད་ལ་"h"ཡོད་པ་གལ་ཆེ།</p>
+                    <p class="note lang-content" data-lang-content="zh" style="display:none;">注意：Thibetan 包含字母 "h"</p>
+                    <p class="note lang-content" data-lang-content="en" style="display:none;">Note: Thibetan includes an "h"</p>
+                </div>
+
+                <div class="submission-card">
+                    <h3 data-translate="submission.format.title">File Format Requirements</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <ul>
+                            <li>Microsoft Word དང་ PDF གཉིས་ཀ་དགོས།</li>
+                            <li>བོད་རྒྱ་དབྱིན་གསུམ་གྱི་ལམ་ནས་བྱས་པའི་ནང་དོན་གནད་བསྡུས།</li>
+                            <li>བོད་ཡིག་དང་རྒྱ་ཡིག་ཡིག་གངས་སུམ་བརྒྱ་ཡིན་པ། དབྱིན་ཡིག་ཐ་སྙད་ཉིས་བརྒྱ་ཡིན་པ།</li>
+                            <li>སྙོ་ཉིད་ཀྱི་མཚན་དང་ཕྱོག་ལས་གནང་ཡུལ་སོགས་ངོ་སྤྲོད་ཐུང་ངུ་ཞིག་མཁོ་སྤྲོད་གནང་དགོས།</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <ul>
+                            <li>请提供微软 Word 以及 PDF 两种版本</li>
+                            <li>同时提供藏、汉、英三语摘要</li>
+                            <li>藏、汉文300字，英文200词</li>
+                            <li>提供作者信息（可附于文后）</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <ul>
+                            <li>Submit both Microsoft Word and PDF formats</li>
+                            <li>Include abstracts in Tibetan, Chinese, and English</li>
+                            <li>300 characters for Tibetan/Chinese, 200 words for English</li>
+                            <li>Provide author information (may be attached at the end)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="submission-card">
+                    <h3 data-translate="submission.deadline.title">Important Dates</h3>
+                    <div class="deadline-display">
+                        <div class="date-item">
+                            <strong data-translate="submission.deadline.inaugural">Inaugural Issue Deadline:</strong>
+                            <span class="date-highlight">September 1, 2025</span>
                         </div>
-                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
-                    </form>
+                    </div>
+                </div>
+
+                <div class="submission-card">
+                    <h3 data-translate="submission.guidelines.title">Formatting Guidelines</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <p>དཔད་རྩོམ་གྱི་པང་བསྟར་གཞན་རྣམས་ཟུར་བཀོད་ལ་འཁོད། དཔད་རྩོམ་གྱི་པང་བསྟར་གསལ་བཤད་ནང་རྩོམ་སྒྲིག་བང་བཀོད་ཀྱི་མཆན་དང་མཐུན་པར་བ་དགོས།</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <p>其余格式请参考附件中的体例为谢。</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <p>Please refer to the attached formatting guidelines for details.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="contact.title">Contact Us</h2>
+            
+            <div class="contact-content">
+                <div class="contact-card">
+                    <h3 data-translate="contact.email">Email</h3>
+                    <a href="mailto:Thibetan@126.com" class="contact-link">Thibetan@126.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <h3 data-translate="contact.office">Editorial Office</h3>
+                    <div class="lang-content" data-lang-content="bo">
+                        <p>ནན་ཁའེ་སློབ་ཆེན་གྱི་བོད་རྒྱ་སྐད་རིགས་ཞིབ་འཇུག་ལྟེ་གནས་</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh" style="display:none;">
+                        <p>南开大学汉藏语研究中心</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="en" style="display:none;">
+                        <p>Sino-Tibetan Languages Research Center<br>Nankai University, Tianjin, China</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3 data-translate="contact.partners">Partner Institutions</h3>
+                    <div class="partners-list">
+                        <p>Nankai University<span class="lang-content" data-lang-content="bo"> (ནན་ཁའེ་སློབ་ཆེན་)</span><span class="lang-content" data-lang-content="zh" style="display:none;"> (南开大学)</span></p>
+                        <p>University of Oregon<span class="lang-content" data-lang-content="bo"> (ཨོ་རེ་གོན་སློབ་ཆེན་)</span><span class="lang-content" data-lang-content="zh" style="display:none;"> (俄勒冈大学)</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="closing-message">
+                <div class="lang-content" data-lang-content="bo">
+                    <p class="blessing">ཞེས་ཀུན་གྱི་སྙན་ལམ་དུ་འབུལ་བ་དང་ཆབས་ཅིག ཁྱེད་ཅག་གྱི་སྐུ་གཟུགས་བདེ་ཞིང་བྱ་གཞག་ཐམས་ཅད་གེགས་མེད་ལྷུན་གྱིས་འགྲུབ་པར་ཤོག །སརྨངྒལཾ། །</p>
+                </div>
+                <div class="lang-content" data-lang-content="zh" style="display:none;">
+                    <p class="blessing">谨此奉达，并祝各位专家诸事吉祥！</p>
+                </div>
+                <div class="lang-content" data-lang-content="en" style="display:none;">
+                    <p class="blessing">Tashi Delek!</p>
+                </div>
+                <p class="signature">
+                    <span class="lang-content" data-lang-content="bo">བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག དུས་དེབ་སྔ་གོན་ལན་ཚོགས་ནས།</span>
+                    <span class="lang-content" data-lang-content="zh" style="display:none;">《藏语文研究》学术期刊筹备编辑部</span>
+                    <span class="lang-content" data-lang-content="en" style="display:none;">Tibetan Language & Linguistics - Journal Preparatory Team</span>
+                </p>
+                <p class="date">
+                    <span class="lang-content" data-lang-content="bo">སྤྱི་ལོ་ ༢༠༢༥ ལོའི་ཟླ་ ༥ པའི་ཚེས་ ༥ ལ་གྲུས་ཕུལ།</span>
+                    <span class="lang-content" data-lang-content="zh" style="display:none;">2025年5月5日</span>
+                    <span class="lang-content" data-lang-content="en" style="display:none;">May 5, 2025</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         📷 EDITORIAL BOARD SECTION (Add When Ready)
+         ═══════════════════════════════════════════════════════════════════
+         
+         Uncomment this section when you're ready to add editorial board members:
+         
+    <section id="editorial-board" class="editorial-board-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="editorial.title">Editorial Board</h2>
+            
+            <div class="board-grid">
+                <div class="board-member">
+                    <img src="images/editor1.jpg" alt="Editor Name" class="member-photo">
+                    <h3 class="member-name">Editor Name</h3>
+                    <p class="member-title">Chief Editor</p>
+                    <p class="member-affiliation">Nankai University</p>
+                </div>
+                
+                <div class="board-member">
+                    <img src="images/editor2.jpg" alt="Editor Name" class="member-photo">
+                    <h3 class="member-name">Editor Name</h3>
+                    <p class="member-title">Associate Editor</p>
+                    <p class="member-affiliation">University of Oregon</p>
+                </div>
+                
+                Add more board members as needed...
+            </div>
+        </div>
+    </section>
+    
+         Add this CSS to styles.css when you use this section:
+         
+         .editorial-board-section {
+             background: var(--bg-white);
+         }
+         
+         .board-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+             gap: 32px;
+             max-width: 1000px;
+             margin: 0 auto;
+         }
+         
+         .board-member {
+             text-align: center;
+             padding: 24px;
+             background: var(--bg-light);
+             border-radius: 16px;
+             border: 1px solid var(--border-color);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+         
+         .board-member:hover {
+             transform: translateY(-4px);
+             box-shadow: var(--shadow-hover);
+         }
+         
+         .member-photo {
+             width: 150px;
+             height: 150px;
+             border-radius: 50%;
+             object-fit: cover;
+             margin-bottom: 16px;
+             border: 3px solid var(--primary-color);
+         }
+         
+         .member-name {
+             font-size: 18px;
+             font-weight: 600;
+             color: var(--primary-color);
+             margin-bottom: 8px;
+         }
+         
+         .member-title {
+             font-size: 14px;
+             color: var(--text-medium);
+             margin-bottom: 4px;
+         }
+         
+         .member-affiliation {
+             font-size: 14px;
+             color: var(--text-light);
+             font-style: italic;
+         }
+         
+         ═══════════════════════════════════════════════════════════════════ -->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M8 7h8M8 12h8M8 17h5" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <span>Belmont Publishing</span>
-                    </div>
-                    <p class="footer-description">
-                        Exceptional literature for discerning readers. Founded in Belmont, Massachusetts.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.987 11.988 11.987 6.62 0 11.987-5.366 11.987-11.987C24.014 5.367 18.648.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.611-3.197-1.559-.748-.948-1.197-2.238-1.197-3.641 0-1.402.449-2.692 1.197-3.64.749-.949 1.9-1.56 3.197-1.56 1.298 0 2.449.611 3.198 1.56.748.948 1.197 2.238 1.197 3.64 0 1.403-.449 2.693-1.197 3.641-.749.948-1.9 1.559-3.198 1.559z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག</h3>
+                    <p>Tibetan Language and Linguistics</p>
                 </div>
-
                 <div class="footer-links">
-                    <div class="link-group">
-                        <h4 class="link-title">Catalog</h4>
-                        <ul class="link-list">
-                            <li><a href="#">Fiction</a></li>
-                            <li><a href="#">Non-fiction</a></li>
-                            <li><a href="#">Poetry</a></li>
-                            <li><a href="#">Essays</a></li>
-                            <li><a href="#">New Releases</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="link-group">
-                        <h4 class="link-title">Authors</h4>
-                        <ul class="link-list">
-                            <li><a href="#">Submission Guidelines</a></li>
-                            <li><a href="#">Editorial Process</a></li>
-                            <li><a href="#">Author Resources</a></li>
-                            <li><a href="#">Rights & Permissions</a></li>
-                            <li><a href="#">Contact Editorial</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="link-group">
-                        <h4 class="link-title">Contact</h4>
-                        <ul class="link-list">
-                            <li><a href="mailto:editorial@belmontpublishing.com">Editorial</a></li>
-                            <li><a href="mailto:rights@belmontpublishing.com">Rights</a></li>
-                            <li><a href="mailto:press@belmontpublishing.com">Press</a></li>
-                            <li><a href="tel:+1-617-555-0123">617.555.0123</a></li>
-                            <li>Belmont, MA 02478</li>
-                        </ul>
-                    </div>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#call-for-papers">Call for Papers</a>
+                    <a href="#submission">Submission</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <div class="footer-legal">
-                    <p>&copy; 2025 Belmont Publishing. All rights reserved.</p>
-                    <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Accessibility</a>
-                    </div>
-                </div>
+                <p>&copy; 2025 Tibetan Language and Linguistics. All rights reserved.</p>
+                <p>Published by Nankai University & University of Oregon</p>
             </div>
         </div>
     </footer>
