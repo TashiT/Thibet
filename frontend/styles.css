@@ -101,7 +101,7 @@ body {
 /* Header */
 .header {
     background: var(--bg-white);
-    padding: 32px 0;
+    padding: 16px 0;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
