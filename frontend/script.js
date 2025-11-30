@@ -2,31 +2,31 @@
 const translations = {
     bo: {
         'nav.home': 'གདོང་ངོས།',
-        'nav.about': 'སྐོར།',
-        'nav.callforpapers': 'རྩོམ་སྒྲིག་སྐོར།',
-        'nav.submission': 'བསྐུར་ཐབས།',
-        'nav.contact': 'འབྲེལ་ལམ།',
-        'hero.badge': 'དུས་དེབ་གསར་འདོན་གྱི་བརྡ་ཐོ།',
-        'hero.headline': 'བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག་གི་རིག་གཞུང་དུས་དེབ།',
-        'hero.subheadline': 'ནན་ཁའེ་སློབ་ཆེན་དང་ཨོ་རེ་གོན་སློབ་ཆེན་གྱིས་པར་སྐྲུན།',
-        'hero.deadline': 'བསྐུར་བའི་མཐའ་དུས་ (ཐོག་མའི་གྲངས་):',
-        'hero.announcement': 'བརྡ་ཐོའི་ཚེས་གྲངས་:',
-        'hero.readcall': 'རྩོམ་སྒྲིག་སྐོར་ཀློག་པ།',
-        'hero.submit': 'རྩོམ་ཡིག་སྐུར་བ།',
-        'about.title': 'དུས་དེབ་སྐོར།',
-        'about.scope.title': 'ཁྱབ་ཁོངས།',
-        'about.topics.title': 'ཞིབ་འཇུག་གི་བརྗོད་གཞི།',
-        'about.institutions.title': 'འབྲེལ་ལས་ཁང་།',
-        'about.editorial': 'རྩོམ་སྒྲིག་ཁང་:',
-        'about.review.title': 'དཔད་བཤེར་ལམ་ལུགས།',
-        'cfp.title': 'རྩོམ་སྒྲིག་སྐོར།',
-        'submission.title': 'བསྐུར་ཐབས་ཀྱི་ལམ་སྟོན།',
-        'submission.email.title': 'ཡིག་ཆའི་གློག་འཕྲིན།',
-        'submission.format.title': 'ཡིག་ཆའི་རྣམ་པ།',
-        'submission.deadline.title': 'གལ་ཆེའི་ཚེས་གྲངས།',
-        'submission.deadline.inaugural': 'ཐོག་མའི་གྲངས་ཀྱི་མཐའ་དུས་:',
-        'submission.guidelines.title': 'རྣམ་བཞག་ལམ་སྟོན།',
-        'contact.title': 'འབྲེལ་ལམ།',
+        'nav.about': 'དུས་དེབ་ངོ་སྤྲོད།',
+        'nav.callforpapers': 'རྩོམ་བསྡུའི་བརྡ་ཐོ།', // Source 2
+        'nav.submission': 'རྩོམ་ཡིག་བསྐུར་སྟངས།',
+        'nav.contact': 'འབྲེལ་གཏུག',
+        'hero.badge': 'དུས་དེབ་གསར་འདོན་གྱི་བརྡ་ཐོ།', // Source 1
+        'hero.headline': 'བོད་ཀྱི་སྐད་ཡིག་ཞིབ་འཇུག', // Source 1
+        'hero.subheadline': 'ནན་ཁའེ་སློབ་ཆེན་དང་ཨོ་རེ་གོན་སློབ་ཆེན་གྱིས་གཙོ་སྒྲུབ་གནང་བ།', // Adapted from Source 14/15 context
+        'hero.deadline': 'རྩོམ་ཡིག་བསྐུར་བའི་དུས་བཅད།', // Source 18
+        'hero.announcement': 'བརྡ་ཐོའི་དུས་ཚོད།',
+        'hero.readcall': 'རྩོམ་བསྡུའི་བརྡ་ཐོ་ཞིབ་ཕྲ་ཀློག་པ།',
+        'hero.submit': 'རྩོམ་ཡིག་བསྐུར་བ།',
+        'about.title': 'དུས་དེབ་ངོ་སྤྲོད།',
+        'about.scope.title': 'དུས་དེབ་ཀྱི་ཁྱབ་ཁོངས།', // Source 10 context
+        'about.topics.title': 'ཞིབ་འཇུག་གི་ནང་དོན།', // Source 10 context
+        'about.institutions.title': 'གཙོ་སྒྲུབ་ལས་ཁུངས།',
+        'about.editorial': 'རྩོམ་སྒྲིག་ཁང་།', // Source 14
+        'about.review.title': 'དཔྱད་བཤེར་ལམ་ལུགས།', // Source 12 context
+        'cfp.title': 'རྩོམ་བསྡུའི་བརྡ་ཐོ།', // Source 2
+        'submission.title': 'རྩོམ་ཡིག་བསྐུར་སྟངས་ཀྱི་ལམ་སྟོན།',
+        'submission.email.title': 'བསྐུར་ཡུལ་གློག་འཕྲིན།', // Source 20
+        'submission.format.title': 'ཡིག་ཆའི་རྣམ་པ།', // Source 20
+        'submission.deadline.title': 'གལ་ཆེའི་དུས་ཚོད།',
+        'submission.deadline.inaugural': 'ཐོག་མའི་འདོན་ཐེངས་ཀྱི་དུས་བཅད།', // Source 18
+        'submission.guidelines.title': 'རྩོམ་སྒྲིག་གི་བླང་བྱ།', // Source 29
+        'contact.title': 'འབྲེལ་གཏུག',
         'contact.email': 'གློག་འཕྲིན།',
         'contact.office': 'རྩོམ་སྒྲིག་ཁང་།',
         'contact.partners': 'མཉམ་ལས་སློབ་ཆེན།'
