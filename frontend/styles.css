@@ -103,6 +103,9 @@ body {
     background: var(--bg-white);
     padding: 16px 0;
     box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo-section {
@@ -740,4 +743,34 @@ html {
 ::selection {
     background: var(--primary-color);
     color: white;
+}
+/* Download Button */
+.guidelines-download {
+    margin-top: 20px;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-download svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
