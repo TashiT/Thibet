@@ -103,9 +103,9 @@ body {
     background: var(--bg-white);
     padding: 16px 0;
     box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    /* position: sticky; */
+    /* top: 0; */
+    /* z-index: 100; */
 }
 
 .logo-section {
